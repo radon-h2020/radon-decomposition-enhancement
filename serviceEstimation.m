@@ -8,7 +8,7 @@ function serviceEstimates=serviceEstimation(traces_name)
         data=tracesByFunction(funNames{i},traces);
         times=arrivalDepartureResponse(data);
         queue=queueLength(times);
-        estimate=demand(queue,times,20,funNames(i));
+        estimate=demand(queue,times,20);
         serviceEstimates.(funNames{i})=estimate;
     end
     

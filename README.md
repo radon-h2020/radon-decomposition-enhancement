@@ -16,7 +16,7 @@ The main procedure of the accuracy enhancement for RADON’S decomposition tool 
   - Extract the arrival, the departure, the response time (including queueing time) and the queue length for each trace.
   - Estimate the service demand with a regression-based model.
 - After obtaining the estimated demand, the original tosca model will be updated with the estimated values.
-![Image of function chain](https://github.com/runanwang07/readme_update/blob/main/process.png)
+![enhancement](https://user-images.githubusercontent.com/74663621/132330868-3ea66570-329c-480c-a0aa-0e67224b96a6.png)
 
 # Documentation
 The extended description of the enhancement can be found in the D2.3 and D6.5, where we present the monitoring customisation and accuracy enhancement. A video presentation and a live demo for the enhancement feature are available at [RADON Webinar 5](https://www.youtube.com/watch?v=vmnjp_nDqXU&list=PLJ3re6Ar-kEV5WAxbTiJJsBBzPp8-Bzs_&index=6). 

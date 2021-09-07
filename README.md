@@ -1,17 +1,20 @@
 # radon-decomposition-enhancement
 
-The radon-decomposition-enhancement repository, contains the required functions to perform service demand estimation for AWS Lambda Functions. Currently, the proposed estimation procedure only supports a regression-based model on the mean response time as a linear function of the mean queue length at arrival. However, future support for other approaches is IN consideration.
+The radon-decomposition-enhancement repository, contains the required functions to perform service demand estimation for AWS Lambda Functions. 
 
-The estimation procedure requires as an input a single text file containing the AWS Lambda function's distributed traces obtained through AWS X-Ray. The full demand estimation is broken down into the following procedures.
+# Functionality
+The enhancement feature is integrated into RADON’S decomposition tool to obtain resource demand estimation based on monitoring data. The current estimation procedure supports a regression-based model on the mean response time as a linear function of the mean queue length at arrival.
 
-The extractInformation.m file contains the parsing method for efficiently capturing the required timestamps and metadata of all the functions called. 
+The main procedure of the accuracy enhancement for RADON’S decomposition tool is as follows. 
+- First, users need to monitor the deployed Lambda functions and obtain the distributed traces with AWS X-Ray. 
+- The enhancement feature takes the log file and the original tosca model file containing the specifications of the pipeline as inputs.
+- The full demand estimation is broken down into the following procedures.
+  - Parse the required timestamps and metadata of all the functions called in the log file.
+  - Receive the parsed traces and split them according to the different AWS Lambda functions.
+  - Extract the arrival, the departure, the response time (including queueing time) and the queue length for each trace.
+  - Estimate the service demand with a regression-based model.
+- After obtaining the estimated demand, the original tosca model will be updated with the estimated values.
+![Image of function chain](https://github.com/runanwang07/readme_update/blob/main/process.png)
 
-The tracesByFunction.m file receives the parsed traces and splits them according to the different AWS Lambda functions contained in the files.
-
-The arrivalDepartureResponse.m file provides the method for efficiently extracting the arrival, the departure and the response time (including queueing time) for each trace. It returns a table sorted with respect the arrival time.
-
-The queueLength.m file receives a sorted table of arrival, departure and response times and it creates the queue length at arrival. 
-
-The demand.m file provides the method for the regression-based demand estimation model. The observation interval [0,T] is split into n equidistant subintervals from which we obtain the mean queue length and mean response time used for the regression.
-
-Finally, the serviceEstimation.m wraps up all the above procedures returning a struct with a field for each function found in the traces and the service demand estimate as values. 
+# Documentation
+The extended description of the enhancement can be found in the D2.3 and D6.5, where we present the monitoring customisation and accuracy enhancement. A video presentation and a live demo for the enhancement feature are available at [RADON Webinar 5](https://www.youtube.com/watch?v=vmnjp_nDqXU&list=PLJ3re6Ar-kEV5WAxbTiJJsBBzPp8-Bzs_&index=6). 

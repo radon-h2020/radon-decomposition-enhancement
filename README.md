@@ -1,4 +1,4 @@
-# radon-decomposition-enhancement
+# Radon-Decomposition-Enhancement
 
 
 The radon-decomposition-enhancement repository, contains the required functions to perform service demand estimation for AWS Lambda Functions. 

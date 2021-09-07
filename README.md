@@ -1,8 +1,8 @@
 | Items    |     Contents  |
 |----------|---------------|
-| Description |  The goal of the Radon-Decomposition-Enhancement tool is to provide resource demand estimations using external monitoring data. |
+| Description |  The goal of the Radon-Decomposition-Enhancement tool is to provide resource demand estimations for AWS Lambda Functions, using external monitoring data captured with AWS X-Ray. |
 | License |       |
-| Mainteners | Giuliano Casale, Jose Perusquia, and Runan Wang |
+| Mainteners | Giuliano Casale @gcasale, Jose Perusquia, and Runan Wang |
 | Demo    | Link: https://www.youtube.com/watch?v=vmnjp_nDqXU&list=PLJ3re6Ar-kEV5WAxbTiJJsBBzPp8-Bzs_&index=6 |
     
 
